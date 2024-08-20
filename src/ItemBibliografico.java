@@ -35,10 +35,20 @@ public abstract class ItemBibliografico {
 
     public boolean validarCampos(){
 
-        if (this.getCodigo() == null) throw new RuntimeException("Código inválido");
-        else if (this.getTitulo() == null) throw new RuntimeException("Titulo inválido");
-        else if (this.getAnoPublicacao() < 1000 && this.getAnoPublicacao() > 2024) throw new RuntimeException("Ano inválido");
+        if (this.getCodigo().isEmpty()) throw new RuntimeException("Código inválido");
+        else if (this.getTitulo().isEmpty()) throw new RuntimeException("Titulo inválido");
+        else if (this.getAnoPublicacao() < 1000 || this.getAnoPublicacao() > 2024) throw new RuntimeException("Ano inválido");
 
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return  "\n-------------------------"+
+                "\nItemBibliografico:" +
+                "\nCódigo > " + codigo+
+                "\nTitulo > " + titulo+
+                "\nAno de publicação > " + anoPublicacao +
+                "\n-------------------------";
     }
 }

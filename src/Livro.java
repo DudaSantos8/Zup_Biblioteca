@@ -26,8 +26,8 @@ public class Livro extends ItemBibliografico{
 
     @Override
     public boolean validarCampos() {
-        if (this.getAutor() == null) throw new RuntimeException("Autor inválido");
-        else if ((this.getIsbn().length()) != 10 || (this.getIsbn().length()) != 13) throw new RuntimeException("Isbn inválido");
+        if (this.getAutor().isEmpty()) throw new RuntimeException("Autor inválido");
+        else if (this.getIsbn().length() != 10 && this.getIsbn().length() != 13) throw new RuntimeException("Isbn inválido");
         return super.validarCampos();
     }
 }
