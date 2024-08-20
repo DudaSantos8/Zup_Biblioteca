@@ -1,3 +1,5 @@
+import java.util.Calendar;
+
 public abstract class ItemBibliografico {
     private String codigo;
     private String titulo;
@@ -34,10 +36,10 @@ public abstract class ItemBibliografico {
     }
 
     public boolean validarCampos(){
-
+        Calendar anoAtual = Calendar.getInstance();
         if (this.getCodigo().isEmpty()) throw new RuntimeException("Código inválido");
         else if (this.getTitulo().isEmpty()) throw new RuntimeException("Titulo inválido");
-        else if (this.getAnoPublicacao() < 1000 || this.getAnoPublicacao() > 2024) throw new RuntimeException("Ano inválido");
+        else if (this.getAnoPublicacao() < 1000 || this.getAnoPublicacao() > anoAtual.get(Calendar.YEAR)) throw new RuntimeException("Ano inválido");
 
         return true;
     }
