@@ -28,7 +28,7 @@ public class AppSystem {
 
             Livro livroNovo = new Livro(codigo, titulo, anoPublicacao, autor, isbn);
             try {
-               biblioteca.AdicionarItem(livroNovo);
+               biblioteca.adicionarItem(livroNovo);
             }catch (RuntimeException e){
                 System.out.println(e.getMessage());
             }
@@ -38,7 +38,7 @@ public class AppSystem {
 
             Periodico periodicoNovo = new Periodico(codigo, titulo, anoPublicacao, periodicidade, volume);
             try {
-                biblioteca.AdicionarItem(periodicoNovo);
+                biblioteca.adicionarItem(periodicoNovo);
             }catch (RuntimeException e){
                 System.out.println(e.getMessage());
             }

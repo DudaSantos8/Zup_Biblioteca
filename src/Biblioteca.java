@@ -9,7 +9,7 @@ public class Biblioteca {
         this.itens = new ArrayList<>();
     }
 
-    public void AdicionarItem(ItemBibliografico item){
+    public void adicionarItem(ItemBibliografico item){
         if(item.validarCampos()){
             itens.add(item);
             System.out.println("Livro adicionado com sucesso");
